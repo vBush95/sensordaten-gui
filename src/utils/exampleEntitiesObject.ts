@@ -13,13 +13,13 @@ type Sensor = {
 
 type Group = string | null;
 
-type entitiesConstructor = {
+export type EntitiesConstructor = {
   numberOfDevices: number;
   groups: Group[];
   sensors: Sensor[][];
 };
 
-const exampleEntitiesObject: entitiesConstructor = {
+const exampleEntitiesObject: EntitiesConstructor = {
   numberOfDevices: 50,
   groups: ["obergeschoss", "untergeschoss", "Z", "C", null],
   sensors: [
@@ -110,4 +110,4 @@ const exampleEntitiesObject: entitiesConstructor = {
   ],
 };
 
-export default exampleEntitiesObject;
+export { exampleEntitiesObject };
