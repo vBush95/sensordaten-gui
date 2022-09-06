@@ -1,41 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { Entities } from "../utilFunctions/generateEntities";
+import { Entities } from "./generateEntities";
 
-import generateEntities from "../utilFunctions/generateEntities";
-import exampleEntitiesObject from "../utils/exampleEntitiesObject";
-
-interface CustomMatchers<R = unknown> {
-  toBeWithinRange(floor: number, ceiling: number): R;
-}
-
-declare global {
-  namespace jest {
-    interface Expect extends CustomMatchers {}
-    interface Matchers<R> extends CustomMatchers<R> {}
-    interface InverseAsymmetricMatchers extends CustomMatchers {}
-  }
-}
+import generateEntities from "./generateEntities";
+import exampleEntitiesObject from "../../utils/exampleEntitiesObject";
 
 describe("#generateEntities", () => {
-  expect.extend({
-    toBeWithinRange(received, floor, ceiling) {
-      const pass = received >= floor && received <= ceiling;
-      if (pass) {
-        return {
-          message: () =>
-            `expected ${received} not to be within range ${floor} - ${ceiling}`,
-          pass: true,
-        };
-      } else {
-        return {
-          message: () =>
-            `expected ${received} to be within range ${floor} - ${ceiling}`,
-          pass: false,
-        };
-      }
-    },
-  });
-
   it("numberOfEntities = 0 - object contains 0 keys", () => {
     let numberOfEntities = 0;
     let entities: Entities = generateEntities(

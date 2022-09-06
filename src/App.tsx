@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import generateEntities, { Entities } from "./utilFunctions/generateEntities";
+import generateEntities, {
+  Entities,
+} from "./utilFunctions/generateEntities/generateEntities";
 import exampleEntitiesObject from "./utils/exampleEntitiesObject";
 
 const App: React.FC = () => {
