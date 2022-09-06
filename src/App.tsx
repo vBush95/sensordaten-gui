@@ -1,9 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import "./App.css";
+import generateEntities, { Entities } from "./utilFunctions/generateEntities";
+import { exampleEntitiesObject } from "./utils/exampleEntitiesObject";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const [count, setCount] = useState(0);
+  const [state, setState] = useState<Entities>(null);
+
+  useEffect(() => {
+    let entities = generateEntities(exampleEntitiesObject, 15);
+    setState(entities);
+  }, [exampleEntitiesObject, generateEntities]);
+
+  useEffect(() => {
+    console.log({ state });
+  }, [state]);
 
   return (
     <div className="App">
@@ -28,7 +40,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

@@ -22,15 +22,14 @@ type FalseEntity = {
   test: boolean;
 };
 
-type Entities = {
+export type Entities = {
   [key: string]: Entity | FalseEntity;
-};
+} | null;
 
-const generateEntities = ({
-  numberOfDevices,
-  groups,
-  sensors,
-}: EntitiesConstructor): Entities => {
+const generateEntities = (
+  { groups, sensors }: EntitiesConstructor,
+  numberOfDevices: number
+): Entities => {
   let entitiesObject: Entities = {};
 
   for (let i = 0; i < numberOfDevices; i++) {
