@@ -1,4 +1,4 @@
-import { EntitiesConstructor } from "../utils/exampleEntitiesObject";
+import { EntitiesConstructor } from "../../utils/exampleEntitiesObject";
 
 type Entity = {
   attributes: {
@@ -24,7 +24,14 @@ type FalseEntity = {
 
 export type Entities = {
   [key: string]: Entity | FalseEntity;
-} | null;
+};
+
+/**
+ * returns an object containing entities randomly chosen from the object of type - EntitiesConstructor
+ * @param  {EntitiesConstructor} exampleEntitiesObject Object that contains all possible sensors or groups to choose from
+ * @param  {Number} numberOfDevices number of devies to be created
+ * @return {Entities}      Object containing valid and invalid entities
+ */
 
 const generateEntities = (
   { groups, sensors }: EntitiesConstructor,

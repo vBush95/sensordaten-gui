@@ -108,4 +108,4 @@ const exampleEntitiesObject: EntitiesConstructor = {
   ],
 };
 
-export { exampleEntitiesObject };
+export default exampleEntitiesObject;

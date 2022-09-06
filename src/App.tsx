@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import generateEntities, { Entities } from "./utilFunctions/generateEntities";
-import { exampleEntitiesObject } from "./utils/exampleEntitiesObject";
+import exampleEntitiesObject from "./utils/exampleEntitiesObject";
 
 const App: React.FC = () => {
   const [count, setCount] = useState(0);
-  const [state, setState] = useState<Entities>(null);
+  const [state, setState] = useState<Entities | null>(null);
 
   useEffect(() => {
     let entities = generateEntities(exampleEntitiesObject, 15);
