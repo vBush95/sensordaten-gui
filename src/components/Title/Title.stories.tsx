@@ -5,9 +5,6 @@ import Title, { Props } from "./Title";
 export default {
   title: "Title",
   component: Title,
-  color: "blue",
-  children: "The Title",
-  size: "medium",
 } as ComponentMeta<typeof Title>;
 
 const Template: ComponentStory<typeof Title> = (args) => <Title {...args} />;
