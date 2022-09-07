@@ -28,9 +28,9 @@ export type Entities = {
 
 /**
  * returns an object containing entities randomly chosen from the object of type - EntitiesConstructor
- * @param  {EntitiesConstructor} exampleEntitiesObject Object that contains all possible sensors or groups to choose from
- * @param  {Number} numberOfDevices number of devies to be created
- * @return {Entities}      Object containing valid and invalid entities
+ * @param exampleEntitiesObject Object that contains all possible sensors or groups to choose from
+ * @param numberOfDevices number of devies to be created
+ * @returns  Object containing valid and invalid entities
  */
 
 const generateEntities = (

@@ -26,10 +26,13 @@ describe("#generateEntities", () => {
         // );
 
         let nameArray: number = name.split("_").length;
+        console.debug({ nameArray });
         expect(nameArray).toBeWithinRange(2, 3);
       } else {
         expect(entityType).toBe("invalidEntity");
       }
     }
   });
+
+  it.todo("test other stuff");
 });

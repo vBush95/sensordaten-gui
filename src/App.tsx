@@ -6,8 +6,37 @@ import generateEntities, {
 } from "./utilFunctions/generateEntities/generateEntities";
 import exampleEntitiesObject from "./utils/exampleEntitiesObject";
 
+/**
+ * Renders a card around some content.
+ *
+ * ```tsx
+ * <CardB variant="secondary">
+ *     <h5>My Title</h5>
+ *     <p>My content</p>
+ * </CardB>
+ * ```
+ *
+ * The props type is written directly in the function definition:
+ *
+ * ```
+ * export function CardB({
+ *     children,
+ *     variant = "primary",
+ * }: PropsWithChildren<{
+ *     variant: "primary" | "secondary" | "success" | "danger" | "light" | "dark";
+ * }>): ReactElement {
+ *     // ...
+ * }
+ * ```
+ *
+ * This can make the TypeDoc documentation a bit cleaner for very simple components,
+ * but it makes your code less readable.
+ *
+ * @category Component
+ */
+
 const App: React.FC = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
   const [state, setState] = useState<Entities | null>(null);
 
   useEffect(() => {

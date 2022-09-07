@@ -18,6 +18,10 @@ export type EntitiesConstructor = {
   sensors: Sensor[][];
 };
 
+/**
+ * this is a test
+ */
+
 const exampleEntitiesObject: EntitiesConstructor = {
   groups: ["obergeschoss", "untergeschoss", "Z", "C", null],
   sensors: [
