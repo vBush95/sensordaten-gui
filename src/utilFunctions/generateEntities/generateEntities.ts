@@ -1,6 +1,6 @@
 import { EntitiesConstructor } from "../../utils/exampleEntitiesObject";
 
-type Entity = {
+export type Entity = {
   attributes: {
     device_class: string;
     friendly_name: string;

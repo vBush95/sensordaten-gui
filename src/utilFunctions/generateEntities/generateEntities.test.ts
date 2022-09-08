@@ -26,8 +26,8 @@ describe("#generateEntities", () => {
         // );
 
         let nameArray: number = name.split("_").length;
-        console.debug({ nameArray });
-        expect(nameArray).toBeWithinRange(2, 3);
+        expect(nameArray).toBeGreaterThanOrEqual(2);
+        expect(nameArray).toBeLessThan(4);
       } else {
         expect(entityType).toBe("invalidEntity");
       }
