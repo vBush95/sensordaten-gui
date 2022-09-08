@@ -39,3 +39,25 @@
 .read-the-docs {
   color: #888;
 }
+
+.borderRad5 {
+  border-radius: 5px;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexRow {
+  flex-direction: row;
+}
+
+.flexColumn {
+  flex-direction: column;
+}
+
+.margin03 {
+margin: 0.3em;
+}

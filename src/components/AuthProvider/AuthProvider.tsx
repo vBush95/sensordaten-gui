@@ -10,7 +10,6 @@ import {
   SaveTokensFunc,
   AuthData,
   Auth,
-  Error,
 } from "home-assistant-js-websocket";
 import { useNavigate } from "react-router-dom";
 
@@ -18,7 +17,9 @@ import { useNavigate } from "react-router-dom";
 
 const hassUrl = "http://192.168.178.75:8123";
 
-type AuthValue = {
+type Error = 1 | 2 | 3 | 4;
+
+export type AuthValue = {
   token: boolean;
   onLogin: () => Promise<void>;
   onLogout: () => void;
@@ -26,11 +27,10 @@ type AuthValue = {
   entities: HassEntities | null;
 };
 
-const AuthContext = createContext<AuthValue | null>(null);
-
 type ChildrenProps = {
   children: JSX.Element | JSX.Element[];
 };
+const AuthContext = createContext<AuthValue | null>(null);
 
 const AuthProvider = ({ children }: ChildrenProps) => {
   const [token, setToken] = useState<boolean>(false);
