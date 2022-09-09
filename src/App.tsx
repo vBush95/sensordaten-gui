@@ -4,20 +4,22 @@ import "./App.css";
 import generateEntities, {
   Entities,
 } from "./utilFunctions/generateEntities/generateEntities";
-import { SortedEntities } from "./utilFunctions/convertEntities/convertEntities";
+import { DevicesObject } from "./utilFunctions/groupEntities/groupEntities";
 import exampleEntitiesObject from "./utils/exampleEntitiesObject";
-import convertEntities from "./utilFunctions/convertEntities/convertEntities";
+import groupEntities from "./utilFunctions/groupEntities/groupEntities";
 
 import LoginPage from "./components/LoginPage/LoginPage";
 
 const App: React.FC = () => {
   const [count, setCount] = useState<number>(0);
-  const [state, setState] = useState<SortedEntities | null>(null);
+  const [state, setState] = useState<DevicesObject | null>(null);
 
   useEffect(() => {
     let entities = generateEntities(exampleEntitiesObject, 15);
-    const convertedEntities = convertEntities(entities);
-    setState(convertedEntities);
+    console.log({ entities });
+    const groupedEntities = groupEntities(entities);
+
+    setState(groupedEntities);
   }, [exampleEntitiesObject, generateEntities]);
 
   useEffect(() => {

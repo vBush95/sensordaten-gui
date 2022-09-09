@@ -1,4 +1,4 @@
-import { classifyPoint } from "robust-point-in-polygon";
+import classifyPoint from "robust-point-in-polygon";
 import { Entities, Entity } from "../generateEntities/generateEntities";
 
 export type EntityInformation = {
@@ -9,13 +9,15 @@ export type EntityInformation = {
   friendly_name: string;
 };
 
-export type Device = {
-  [key: string]: EntityInformation | null | string;
+export type DeviceProperties = {
+  entities: {
+    [key: string]: EntityInformation;
+  };
   group: string | null;
 };
 
-export type SortedEntities = {
-  [key: string]: Device;
+export type DevicesObject = {
+  [key: string]: DeviceProperties;
 };
 
 /**
@@ -24,9 +26,8 @@ export type SortedEntities = {
  * @returns  returns an object containing all entities grouped by device
  */
 
-const convertEntities = (entities: Entities): SortedEntities => {
-  let sortedEntitiesObject: SortedEntities = {};
-  //console.log("inside convert entites", entities);
+const groupEntities = (entities: Entities): DevicesObject => {
+  let sortedEntitiesObject: DevicesObject = {};
   for (const [entity, values] of Object.entries(entities)) {
     // check if entity is a sensor -- starts with sensor.
     let splitName = entity.split(".");
@@ -37,7 +38,7 @@ const convertEntities = (entities: Entities): SortedEntities => {
       //console.log("name", name);
       if (name) {
         //let deviceAlreadyExists = sortedEntitiesObject.hasOwnProperty(name);
-        let newEntityObject = {
+        let newEntityObject: EntityInformation = {
           state: values.state,
           unit_of_measurement: values.attributes.unit_of_measurement,
           last_updated: values.last_updated,
@@ -49,11 +50,21 @@ const convertEntities = (entities: Entities): SortedEntities => {
           let existingProperties = sortedEntitiesObject[name];
           sortedEntitiesObject[name] = {
             ...existingProperties,
-            [measurement]: newEntityObject,
+            entities: {
+              ...existingProperties.entities,
+              [measurement]: newEntityObject,
+            },
           };
         } else {
+          // let newDeviceKey = {
+          //   [measurement]: newEntityObject,
+          //   group: group ? group : null,
+          // };
+          // Object.assign(sortedEntitiesObject, newDeviceKey);
           sortedEntitiesObject[name] = {
-            [measurement]: newEntityObject,
+            entities: {
+              [measurement]: newEntityObject,
+            },
             group: group ? group : null,
           };
         }
@@ -64,4 +75,4 @@ const convertEntities = (entities: Entities): SortedEntities => {
   return sortedEntitiesObject;
 };
 
-export default convertEntities;
+export default groupEntities;
