@@ -11,6 +11,7 @@ import groupEntities from "./utilFunctions/groupEntities/groupEntities";
 import labelEntitiesData from "./utilFunctions/labelEntitiesData/labelEntitiesData";
 import thresholdsForMeasurements from "./utils/thresholdsForMeasurements";
 import entitiesObjectToArray from "./utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
+import createDummyDevicesArray from "./utilFunctions/createDummyDevicesArray/createDummyDevicesArray";
 
 import Layout from "./components/Layout/Layout";
 
@@ -18,16 +19,9 @@ const App: React.FC = () => {
   const [devices, setDevices] = useState<DeviceObject[]>([]);
 
   useEffect(() => {
-    let entities = generateEntities(exampleEntitiesObject, 15);
-    console.log({ entities });
-    const groupedEntities = groupEntities(entities);
-    const labeledEntities = labelEntitiesData(
-      groupedEntities,
-      thresholdsForMeasurements
-    );
-    const labeledEntitesArray = entitiesObjectToArray(labeledEntities);
+    let devicesArray = createDummyDevicesArray(15);
 
-    setDevices(labeledEntitesArray);
+    setDevices(devicesArray);
   }, [exampleEntitiesObject, generateEntities]);
 
   useEffect(() => {

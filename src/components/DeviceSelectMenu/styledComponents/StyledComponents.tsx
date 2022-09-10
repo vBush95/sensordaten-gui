@@ -11,12 +11,16 @@ const OrderedListSC = styled.ol`
   background-color: white;
 `;
 
-const MenuSC = styled.div`
+export type Props = {
+  maxWidth: number;
+};
+const MenuSC = styled.div<Props>`
   min-width: 13em;
   background-color: transparent;
 
   @media ${screenSizes.desktop} {
     min-width: 20em;
+    max-width: ${({ maxWidth }) => (maxWidth ? `${maxWidth}%` : "fit-content")};
   }
 `;
 

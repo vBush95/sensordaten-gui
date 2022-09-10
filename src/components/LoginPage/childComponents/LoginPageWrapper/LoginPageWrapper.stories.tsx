@@ -1,6 +1,5 @@
 // @ts-nocheck
 
-import React from "react";
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
 import { action, actions } from "@storybook/addon-actions";
 import LoginButton from "./childComponents/LoginButton/LoginButton";
