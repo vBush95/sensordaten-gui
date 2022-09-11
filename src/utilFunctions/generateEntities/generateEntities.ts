@@ -8,14 +8,14 @@ export type Entity = {
     unit_of_measurement: string;
   };
   context: {
-    id: null;
-    parent_id: null;
-    user_id: null;
+    id: null | string;
+    parent_id: null | string;
+    user_id: null | string;
   };
   entity_id: string;
   last_changed: Date;
   last_updated: Date;
-  state: number | string;
+  state: number | "unknown";
 };
 
 type FalseEntity = {

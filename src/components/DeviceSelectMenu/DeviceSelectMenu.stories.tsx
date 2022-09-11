@@ -25,7 +25,10 @@ export default {
     },
     devices: {
       description:
-        "Array of Devices actually passed to the components --- in this story the object is only shown as an example and is not actually used to create the menu element",
+        "Array of Devices actually passed to the components --- in this story the object is only shown as an example",
+    },
+    useDummyData: {
+      description: "Toggle between DummyData range[10-50] or the devices Array",
     },
   },
   decorators: [withRouter],
@@ -36,7 +39,12 @@ const Template: ComponentStory<typeof DeviceSelectMenu> = (args) => {
     () => createDummyDevicesArray(args.numberOfPossibleDevices),
     [args.numberOfPossibleDevices]
   );
-  return <DeviceSelectMenu devices={dummyDevices} maxWidth={args.maxWidth} />;
+  return (
+    <DeviceSelectMenu
+      devices={args.useDummyData ? dummyDevices : args.devices}
+      maxWidth={args.maxWidth}
+    />
+  );
 };
 
 export const DefaultDeviceSelectMenu = Template.bind({});
@@ -45,4 +53,5 @@ DefaultDeviceSelectMenu.args = {
   maxWidth: 20,
   numberOfPossibleDevices: 10,
   devices: createDummyDevicesArray(10),
+  useDummyData: true,
 };

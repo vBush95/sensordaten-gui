@@ -12,7 +12,7 @@ const OrderedListSC = styled.ol`
 `;
 
 export type Props = {
-  maxWidth: number;
+  maxWidth?: number;
 };
 const MenuSC = styled.div<Props>`
   min-width: 13em;

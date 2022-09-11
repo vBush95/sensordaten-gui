@@ -12,6 +12,7 @@ import labelEntitiesData from "./utilFunctions/labelEntitiesData/labelEntitiesDa
 import thresholdsForMeasurements from "./utils/thresholdsForMeasurements";
 import entitiesObjectToArray from "./utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
 import createDummyDevicesArray from "./utilFunctions/createDummyDevicesArray/createDummyDevicesArray";
+import OverviewTabelle from "./components/OverviewTabelle/OverviewTabelle";
 
 import Layout from "./components/Layout/Layout";
 
@@ -19,7 +20,7 @@ const App: React.FC = () => {
   const [devices, setDevices] = useState<DeviceObject[]>([]);
 
   useEffect(() => {
-    let devicesArray = createDummyDevicesArray(15);
+    let devicesArray = createDummyDevicesArray(100);
 
     setDevices(devicesArray);
   }, [exampleEntitiesObject, generateEntities]);
@@ -33,8 +34,8 @@ const App: React.FC = () => {
       <Route path="/sensordaten/" element={<Layout devices={devices} />}>
         <Route
           path="overview"
-          //element={<OverviewTabelle devices={devices} />}
-          element={<p>Übersichtstabelle</p>}
+          element={<OverviewTabelle devices={devices} />}
+          //element={<p>Übersichtstabelle</p>}
         />
         <Route
           path="sensor/:deviceId"

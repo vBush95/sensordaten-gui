@@ -1,6 +1,8 @@
 import thresholdsForMeasurements from "./thresholdsForMeasurements";
 import thresholdsIntoSteps from "../utilFunctions/thresholdsIntoSteps/thresholdsIntoSteps";
 
+import { Key } from "../components/OverviewTabelle/OverviewTabelle";
+
 const influxQuerySettings = [
   {
     value: "1d",
@@ -81,7 +83,13 @@ const influxQuerySettings = [
   },
 ];
 
-const tableCategories = [
+export type TableCategory = {
+  key: Key;
+  friendlyName: string;
+  unit_of_measurement: string;
+};
+
+const tableCategories: TableCategory[] = [
   { key: "device", friendlyName: "Gerät", unit_of_measurement: "" },
   { key: "group", friendlyName: "Gruppierung", unit_of_measurement: "" },
   {

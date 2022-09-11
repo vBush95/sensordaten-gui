@@ -2,7 +2,7 @@ import classifyPoint from "robust-point-in-polygon";
 import { Entities, Entity } from "../generateEntities/generateEntities";
 
 export type EntityInformation = {
-  state: number | string;
+  state: number | "unknown";
   unit_of_measurement: string;
   last_updated: Date;
   entity_id: string;

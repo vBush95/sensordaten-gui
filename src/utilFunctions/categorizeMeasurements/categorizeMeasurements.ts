@@ -5,11 +5,13 @@ import { EntityInformation } from "../groupEntities/groupEntities";
 import { TextAndColor } from "../checkForBehaglichkeit/checkForBehaglichkeit";
 import setTextAndColor from "../setTextAndColor/setTextAndColor";
 
+export type Entities = {
+  [key: string]: EntityInformation & TextAndColor;
+};
+
 export type DevicePropertiesCategorized = {
   group: string | null;
-  entities: {
-    [key: string]: EntityInformation & TextAndColor;
-  };
+  entities: Entities;
 };
 
 const categorizeMeasurements = (

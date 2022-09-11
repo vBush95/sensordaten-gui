@@ -30,6 +30,4 @@ const HeaderTextSC = styled.div`
   margin-left: 7px;
 `;
 
-const MenuItemSC = styled.div``;
-
-export { MenuItemSC, ListHeadingSC, StyledLinkSC, HeaderTextSC };
+export {  ListHeadingSC, StyledLinkSC, HeaderTextSC };

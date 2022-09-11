@@ -20,7 +20,7 @@ const Layout = ({ devices }: { devices: DeviceObject[] }) => {
         {context?.token ? (
           <>
             <DeviceSelectMenu devices={devices} />
-            {/* <Outlet /> */}
+            <Outlet />
           </>
         ) : (
           <LoginPage
