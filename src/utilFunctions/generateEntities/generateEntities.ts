@@ -1,3 +1,4 @@
+import { HassEntity } from "home-assistant-js-websocket";
 import { EntitiesConstructor } from "../../utils/exampleEntitiesObject";
 
 export type Entity = {
@@ -23,7 +24,7 @@ type FalseEntity = {
 };
 
 export type Entities = {
-  [key: string]: Entity | FalseEntity;
+  [key: string]: Entity | FalseEntity | HassEntity;
 };
 
 /**

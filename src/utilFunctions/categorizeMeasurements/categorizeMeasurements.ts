@@ -24,7 +24,7 @@ const categorizeMeasurements = (
     categorizedObject.entities.luftdruck = { ...entities.luftdruck };
   }
 
-  if (entities.temperatur && entities.luftdruck) {
+  if (entities.temperatur && entities.luftfeuchtigkeit) {
     let { text, color } = checkForBehaglichkeit(
       entities.temperatur.state,
       entities.luftfeuchtigkeit.state,

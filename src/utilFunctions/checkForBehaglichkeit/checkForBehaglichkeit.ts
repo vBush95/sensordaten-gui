@@ -7,24 +7,25 @@ export type TextAndColor = {
 };
 
 const checkForBehaglichkeit = (
-  temperatur: number | string,
-  luftfeuchtigkeit: number | string,
+  temperatur: number | string | undefined,
+  luftfeuchtigkeit: number | string | undefined,
   { ht: { polygonBehaglich, polygonNochBehaglich }, colors }: Thresholds
 ): TextAndColor => {
-  if (
-    typeof temperatur === "number" &&
-    temperatur !== null &&
-    typeof luftfeuchtigkeit === "number" &&
-    luftfeuchtigkeit !== null
-  ) {
-    const isBehaglich = classifyPoint(polygonBehaglich, [
-      temperatur,
-      luftfeuchtigkeit,
-    ]);
-    const isNochBehaglich = classifyPoint(polygonNochBehaglich, [
-      temperatur,
-      luftfeuchtigkeit,
-    ]);
+  if (temperatur !== undefined && luftfeuchtigkeit !== undefined) {
+    let temp: number;
+    let luftf: number;
+    if (typeof temperatur === "string") {
+      temp = parseFloat(temperatur);
+    } else {
+      temp = temperatur;
+    }
+    if (typeof luftfeuchtigkeit === "string") {
+      luftf = parseFloat(luftfeuchtigkeit);
+    } else {
+      luftf = luftfeuchtigkeit;
+    }
+    const isBehaglich = classifyPoint(polygonBehaglich, [temp, luftf]);
+    const isNochBehaglich = classifyPoint(polygonNochBehaglich, [temp, luftf]);
 
     if (isBehaglich === 0 || isBehaglich === -1) {
       return { text: "behaglich", color: colors.good };

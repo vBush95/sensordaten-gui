@@ -3,7 +3,18 @@ import thresholdsIntoSteps from "../utilFunctions/thresholdsIntoSteps/thresholds
 
 import { Key } from "../components/OverviewTabelle/OverviewTabelle";
 
-const influxQuerySettings = [
+export type AggregateTime = {
+  value: string;
+  label: string;
+};
+
+export type QuerySetting = {
+  value: string;
+  label: string;
+  aggregate_array: AggregateTime[];
+};
+
+const influxQuerySettings: QuerySetting[] = [
   {
     value: "1d",
     label: "1 Tag",
@@ -124,7 +135,25 @@ const tableCategories: TableCategory[] = [
   },
 ];
 
-const PMBarObject = {
+export type Label = {
+  name: string;
+  color: string;
+};
+
+export type EntityBarObject = {
+  messwert: string;
+  steps: number[];
+  label1: Label;
+  label2: Label;
+  label3: Label;
+};
+
+export type PMBObject = {
+  pm25: EntityBarObject;
+  pm10: EntityBarObject;
+};
+
+const PMBarObject: PMBObject = {
   pm25: {
     messwert: "PM2.5",
     steps: thresholdsIntoSteps(thresholdsForMeasurements.pm25),
