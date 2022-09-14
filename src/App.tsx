@@ -36,14 +36,14 @@ const App: React.FC = () => {
   useEffect(() => {
     if (context?.entities) {
       const convEntities = groupEntities(context.entities);
-      console.log({ convEntities });
+      //console.log({ convEntities });
       const labeledEntities = labelEntitiesData(
         convEntities,
         thresholdsForMeasurements
       );
-      console.log({ labeledEntities });
+      //console.log({ labeledEntities });
       const labeledEntitiesArray = entitiesObjectToArray(labeledEntities);
-      console.log({ labeledEntitiesArray });
+      //console.log({ labeledEntitiesArray });
       setDevices(labeledEntitiesArray);
     }
   }, [context?.entities]);

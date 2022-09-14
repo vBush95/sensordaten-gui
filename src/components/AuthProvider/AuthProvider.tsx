@@ -86,7 +86,7 @@ const AuthProvider = ({ children }: ChildrenProps) => {
     if (auth) {
       const connection = await createConnection({ auth });
       subscribeEntities(connection, (ent) => {
-        console.log(ent);
+        //console.log(ent);
         setEntities(ent);
       });
       setToken(true);
@@ -99,7 +99,7 @@ const AuthProvider = ({ children }: ChildrenProps) => {
     try {
       // Redirect user to log in on their instance
       let auth = await getAuth({ hassUrl });
-      console.log("auth", auth);
+      //console.log("auth", auth);
     } catch (err) {
       console.log(`Unknown error: ${err}`);
     }

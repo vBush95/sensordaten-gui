@@ -81,13 +81,11 @@ const Device = ({ devices }: { devices: DeviceObject[] }) => {
       //console.log("devices", devices, params);
       // check if the device array contains a device with the correct id
       let foundDevice = devices.find((item) => item.device === params.deviceId);
-      let indexInArray = foundDevice && devices.indexOf(foundDevice);
+      let indexInArray = foundDevice ? devices.indexOf(foundDevice) : 0;
       //console.log("deviceExists", foundDevice, indexInArray);
       if (foundDevice) {
         setDevice(foundDevice);
-        if (indexInArray) {
-          setIndex(indexInArray);
-        }
+        setIndex(indexInArray);
 
         setChecked(false);
       }

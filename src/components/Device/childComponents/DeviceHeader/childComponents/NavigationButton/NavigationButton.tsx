@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SquareArrowIcon from "./childComponents/SquareArrowIcon";
 import { useNavigate } from "react-router-dom";
 import firstLetterToUpperCase from "../../../../../../utilFunctions/firstLetterToUppercase/firstLetterToUppercase";
@@ -11,6 +11,12 @@ import {
 } from "./StyledComponents";
 import { DeviceObject } from "../../../../../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
 
+const noDevice = (
+  <DisabledSC>
+    <TextSC>No Device</TextSC>
+  </DisabledSC>
+);
+
 export type NBProps = {
   rotation: 180 | 0;
   index: number;
@@ -18,6 +24,7 @@ export type NBProps = {
 };
 
 const NavigationButton = ({ rotation, index, devices }: NBProps) => {
+  const [button, setButton] = useState(noDevice);
   let navigate = useNavigate();
 
   const previousDevice = (
@@ -42,23 +49,21 @@ const NavigationButton = ({ rotation, index, devices }: NBProps) => {
     </ContainerSC>
   );
 
-  const noDevice = (
-    <DisabledSC>
-      <TextSC>No Device</TextSC>
-    </DisabledSC>
-  );
+  useEffect(() => {
+    let displayedButton = noDevice;
+    if (devices) {
+      displayedButton =
+        devices && rotation === 0 && index >= 1
+          ? previousDevice
+          : rotation === 180 && index + 1 < devices.length
+          ? nextDevice
+          : noDevice;
+    }
 
-  let displayedButton = noDevice;
-  if (devices) {
-    displayedButton =
-      devices && rotation === 0 && index >= 1
-        ? previousDevice
-        : rotation === 180 && index + 1 < devices.length
-        ? nextDevice
-        : noDevice;
-  }
+    setButton(displayedButton);
+  }, [index]);
 
-  return displayedButton;
+  return button;
 };
 
 export default NavigationButton;

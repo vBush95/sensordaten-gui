@@ -183,14 +183,11 @@ const hassUrl = "http://192.168.178.75:8123";
 
 const bucket = "Sensors";
 const org = "Wiebusch";
-const influxToken =
-  "X8nBrX1zQOHpS_EaZ4P9NxOtqWgmBBV5F9FxxpTUrQgS9v9_Zgr7Q6Tcj7qehe_ExtaLqmyiaBFGoxOZHcw46Q==";
 
 const influxUrl = "http://192.168.178.75:8086";
 
 export {
   org,
-  influxToken,
   hassUrl,
   influxUrl,
   bucket,

@@ -19,7 +19,6 @@ import InfluxChart from "./childComponents/InfluxChart/InfluxChart";
 
 import {
   org,
-  influxToken,
   influxUrl,
   bucket,
   influxQuerySettings,
@@ -31,7 +30,7 @@ import { StoryIndex } from "@storybook/store";
 
 const client = new InfluxDB({
   url: influxUrl,
-  token: influxToken,
+  token: import.meta.env.VITE_INFLUX_TOKEN,
 });
 
 export type ChartProps = {
