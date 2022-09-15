@@ -6,11 +6,10 @@ import DeviceStats from "./childComponents/DeviceStats/DeviceStats";
 import DeviceContainerSC from "./StyledComponents";
 import DeviceChartsMenu from "./childComponents/DeviceChartsMenu/DeviceChartsMenu";
 import Chart from "./childComponents/Chart/Chart";
+import DemoChart from "./childComponents/Chart/DemoChart";
 
 import { DeviceObject } from "../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
 import hasKey from "../../utilFunctions/hasKey/hasKey";
-
-// token: process.env.INFLUX_DB_TOKEN,
 
 export type ActiveCharts = {
   temperatur: boolean;
@@ -125,9 +124,19 @@ const Device = ({ devices }: { devices: DeviceObject[] }) => {
               activeCharts,
             }}
           />
-
+          {/* 
           {Object.keys(activeCharts).map((key, index) => (
             <Chart
+              device={device}
+              show={activeCharts[key as keyof ActiveCharts]}
+              key={`InfluxChart-${index}`}
+              name={key}
+              graphDimensions={graphDimensions}
+            />
+          ))} */}
+
+          {Object.keys(activeCharts).map((key, index) => (
+            <DemoChart
               device={device}
               show={activeCharts[key as keyof ActiveCharts]}
               key={`InfluxChart-${index}`}

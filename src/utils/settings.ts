@@ -94,6 +94,73 @@ const influxQuerySettings: QuerySetting[] = [
   },
 ];
 
+const demoTimeSeriesSettings: QuerySetting[] = [
+  {
+    value: "1d",
+    label: "1 Tag",
+    aggregate_array: [
+      { value: "30m", label: "30 Minuten" },
+      { value: "1h", label: "1 Stunde" },
+      { value: "2h", label: "2 Stunden" },
+    ],
+  },
+  {
+    value: "3d",
+    label: "3 Tage",
+    aggregate_array: [
+      { value: "1h", label: "1 Stunde" },
+      { value: "2h", label: "2 Stunden" },
+      { value: "3h", label: "3 Stunden" },
+    ],
+  },
+  {
+    value: "7d",
+    label: "7 Tage",
+    aggregate_array: [
+      { value: "3h", label: "3 Stunden" },
+      { value: "4h", label: "4 Stunden" },
+      { value: "6h", label: "6 Stunden" },
+    ],
+  },
+  {
+    value: "30d",
+    label: "1 Monat",
+    aggregate_array: [
+      { value: "6h", label: "6 Stunden" },
+      { value: "12h", label: "12 Stunden" },
+      { value: "1d", label: "1 Tag" },
+    ],
+  },
+  {
+    value: "90d",
+    label: "3 Monate",
+    aggregate_array: [
+      { value: "1d", label: "1 Tag" },
+      { value: "2d", label: "2 Tage" },
+      { value: "3d", label: "3 Tage" },
+    ],
+  },
+  {
+    value: "180d",
+    label: "6 Monate",
+    aggregate_array: [
+      { value: "2d", label: "2 Tage" },
+      { value: "3d", label: "3 Tage" },
+      { value: "7d", label: "7 Tage" },
+    ],
+  },
+  {
+    value: "365d",
+    label: "12 Monate",
+    aggregate_array: [
+      { value: "3d", label: "3 Tage" },
+      { value: "7d", label: "7 Tage" },
+      { value: "14d", label: "14 Tage" },
+      { value: "28d", label: "28 Tage" },
+    ],
+  },
+];
+
 export type TableCategory = {
   key: Key;
   friendlyName: string;
@@ -195,4 +262,5 @@ export {
   PMBarObject,
   tableCategories,
   influxQuerySettings,
+  demoTimeSeriesSettings,
 };

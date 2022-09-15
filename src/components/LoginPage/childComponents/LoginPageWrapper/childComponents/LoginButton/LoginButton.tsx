@@ -1,5 +1,6 @@
 import React from "react";
 import useAuth from "../../../../../../hooks/useAuth";
+import useDemoAuth from "../../../../../../hooks/useDemoAuth";
 
 import Button from "./styledComponents/StyledComponents";
 
@@ -22,7 +23,8 @@ export type Props = {
  */
 
 const LoginButton: React.FC<Props> = (props) => {
-  const context = useAuth();
+  //const context = useAuth();
+  const context = useDemoAuth();
   return (
     <Button
       className="borderRad5 margin03"

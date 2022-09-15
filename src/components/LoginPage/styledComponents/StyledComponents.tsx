@@ -34,4 +34,19 @@ const LoginPageSC = styled.div`
   height: 80vh;
 `;
 
-export { LoginPageSC, Image };
+export type DemoCardProps = {
+  color: string;
+  border: string;
+  padding: string;
+};
+
+const DemoCard = styled.div<DemoCardProps>`
+  margin-bottom: 5rem;
+  width: 20em;
+  background-color: ${({ color }) => color};
+  border: ${({ border }) => `${border}`};
+  padding: ${({ padding }) => `${padding}`};
+  box-sizing: border-box;
+`;
+
+export { LoginPageSC, Image, DemoCard };

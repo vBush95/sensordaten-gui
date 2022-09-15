@@ -26,7 +26,6 @@ import {
 import dataToPoints from "./functions/dataToPoints";
 import { DeviceObject } from "../../../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
 import { GraphData } from "./functions/dataToPoints";
-import { StoryIndex } from "@storybook/store";
 
 const client = new InfluxDB({
   url: influxUrl,

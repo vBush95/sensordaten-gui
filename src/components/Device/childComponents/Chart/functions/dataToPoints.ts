@@ -17,7 +17,7 @@ export type GraphData = {
 const dataToPoints = (influxArray: InfluxResponseObject[]): GraphData => {
   let graphData: GraphData = {
     unit_of_measurement: influxArray[0]._measurement,
-    graphSettings: [{ id: influxArray[0].entity_id, color: "blue", data: [] }],
+    graphSettings: [{ id: influxArray[0].entity_id, color: "", data: [] }],
   };
   for (let i = 0; i < influxArray.length; i++) {
     let splitTime = influxArray[i]._time.split(".");

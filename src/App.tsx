@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useDebugValue } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import generateEntities, {
@@ -17,36 +17,38 @@ import Device from "./components/Device/Device";
 
 import Layout from "./components/Layout/Layout";
 import useAuth from "./hooks/useAuth";
+import useDemoAuth from "./hooks/useDemoAuth";
 
 const App: React.FC = () => {
   const [devices, setDevices] = useState<DeviceObject[]>([]);
 
-  const context = useAuth();
-
-  // useEffect(() => {
-  //   let devicesArray = createDummyDevicesArray(100);
-
-  //   setDevices(devicesArray);
-  // }, [exampleEntitiesObject, generateEntities]);
-
-  // useEffect(() => {
-  //   console.log({ devices });
-  // }, [devices]);
+  //const context = useAuth();
+  const context = useDemoAuth();
 
   useEffect(() => {
-    if (context?.entities) {
-      const convEntities = groupEntities(context.entities);
-      //console.log({ convEntities });
-      const labeledEntities = labelEntitiesData(
-        convEntities,
-        thresholdsForMeasurements
-      );
-      //console.log({ labeledEntities });
-      const labeledEntitiesArray = entitiesObjectToArray(labeledEntities);
-      //console.log({ labeledEntitiesArray });
-      setDevices(labeledEntitiesArray);
-    }
-  }, [context?.entities]);
+    let devicesArray = createDummyDevicesArray(30);
+
+    setDevices(devicesArray);
+  }, [createDummyDevicesArray, generateEntities]);
+
+  useEffect(() => {
+    console.log({ devices });
+  }, [devices]);
+
+  // useEffect(() => {
+  //   if (context?.entities) {
+  //     const convEntities = groupEntities(context.entities);
+  //     //console.log({ convEntities });
+  //     const labeledEntities = labelEntitiesData(
+  //       convEntities,
+  //       thresholdsForMeasurements
+  //     );
+  //     //console.log({ labeledEntities });
+  //     const labeledEntitiesArray = entitiesObjectToArray(labeledEntities);
+  //     //console.log({ labeledEntitiesArray });
+  //     setDevices(labeledEntitiesArray);
+  //   }
+  // }, [context?.entities]);
 
   return (
     <Routes>

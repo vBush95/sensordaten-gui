@@ -1,6 +1,7 @@
 import React from "react";
 
 import useAuth from "../../hooks/useAuth";
+import useDemoAuth from "../../hooks/useDemoAuth";
 import hsbremerhaven from "../../assets/logo-2022.png";
 
 import {
@@ -10,7 +11,8 @@ import {
 } from "./styledComponents/StyledComponents";
 
 const Header = () => {
-  const context = useAuth();
+  // const context = useAuth();
+  const context = useDemoAuth();
   return (
     <HeaderSC color={"#282c34"} textColor={"white"}>
       <InvertedImage

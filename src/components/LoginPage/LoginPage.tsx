@@ -1,5 +1,9 @@
 import React from "react";
-import { LoginPageSC, Image } from "./styledComponents/StyledComponents";
+import {
+  LoginPageSC,
+  Image,
+  DemoCard,
+} from "./styledComponents/StyledComponents";
 import LoginButton from "./childComponents/LoginPageWrapper/childComponents/LoginButton/LoginButton";
 
 import hsbremerhaven from "../../assets/logo-2022.png";
@@ -14,6 +18,15 @@ type Props = {
 const LoginPage: React.FC<Props> = (props) => {
   return (
     <LoginPageWrapper>
+      <DemoCard
+        className="borderRad5"
+        color={"white"}
+        border={"1px solid #282c34"}
+        padding={"1em"}
+      >
+        Dies ist die <strong>Demo-Version</strong> ohne Authentifizierung und
+        mit beispielhaften Messwerten.
+      </DemoCard>
       <Image
         color={"white"}
         {...props}
