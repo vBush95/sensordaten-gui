@@ -40,7 +40,7 @@ export type DemoCardProps = {
   padding: string;
 };
 
-const DemoCard = styled.div<DemoCardProps>`
+const DemoCardSC = styled.div<DemoCardProps>`
   margin-bottom: 5rem;
   width: 20em;
   background-color: ${({ color }) => color};
@@ -49,4 +49,14 @@ const DemoCard = styled.div<DemoCardProps>`
   box-sizing: border-box;
 `;
 
-export { LoginPageSC, Image, DemoCard };
+const SignatureSC = styled.div`
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #969696;
+  text-align: center;
+  margin-bottom: 2em;
+`;
+
+export { LoginPageSC, Image, DemoCardSC, SignatureSC };
