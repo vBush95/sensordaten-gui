@@ -15,4 +15,4 @@ cd dist
 git add dist/
 git commit -m "deploy"
 
-git push -f origin demo-site
+git push -f https://github.com/vBush95/sensordaten-gui demo-site
