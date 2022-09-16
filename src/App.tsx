@@ -26,10 +26,12 @@ const App: React.FC = () => {
   const context = useDemoAuth();
 
   useEffect(() => {
-    let devicesArray = createDummyDevicesArray(30);
+    if (context?.token) {
+      let devicesArray = createDummyDevicesArray(30);
 
-    setDevices(devicesArray);
-  }, [createDummyDevicesArray, generateEntities]);
+      setDevices(devicesArray);
+    }
+  }, [createDummyDevicesArray, generateEntities, context?.token]);
 
   useEffect(() => {
     console.log({ devices });
@@ -52,7 +54,7 @@ const App: React.FC = () => {
 
   return (
     <Routes>
-      <Route path="/sensordaten/" element={<Layout devices={devices} />}>
+      <Route path="/" element={<Layout devices={devices} />}>
         <Route
           path="overview"
           element={<OverviewTabelle devices={devices} />}
