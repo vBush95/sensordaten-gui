@@ -5,16 +5,16 @@ import "./index.css";
 
 import { AuthProvider } from "./components/AuthProvider/AuthProvider";
 import { DemoAuthProvider } from "./components/AuthProvider/DemoAuthProvider";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  // <React.StrictMode>
-  <BrowserRouter>
-    {/*  <AuthProvider> */}
+  <HashRouter>
+    {/* <BrowserRouter>
+      <AuthProvider> */}
     <DemoAuthProvider>
       <App />
     </DemoAuthProvider>
-    {/* </AuthProvider> */}
-  </BrowserRouter>
-  // </React.StrictMode>
+    {/* </AuthProvider>
+  </BrowserRouter> */}
+  </HashRouter>
 );
