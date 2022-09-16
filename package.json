@@ -1,7 +1,7 @@
 {
   "name": "sensordaten-gui",
   "private": true,
-  "homepage": "https://vBush95.github.io/sensordaten-gui/sensordaten",
+  "homepage": "https://vBush95.github.io/sensordaten-gui/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
