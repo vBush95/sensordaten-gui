@@ -6,5 +6,4 @@ const dev = {
   url: "/sensordaten/",
 };
 
-export const config =
-  import.meta.env.VITE_NODE_ENV === "development" ? dev : prod;
+export const config = import.meta.env.DEV ? dev : prod;
