@@ -17,12 +17,12 @@ jobs:
 
       - name: Node Install
         uses: actions/setup-node@v1
-        width:
+        with:
           node-version: ${{matrix.node-version}}
       - run: npm i
 
       - name: Run Unit-Testing
         uses: actions/setup-node@v1
-        width:
+        with:
           node-version: ${{matrix.node-version}}
       - run: npm run test:ci
