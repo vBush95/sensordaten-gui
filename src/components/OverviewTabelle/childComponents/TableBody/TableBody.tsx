@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import firstLetterToUpperCase from "../../../../utilFunctions/firstLetterToUppercase/firstLetterToUppercase";
 import { DeviceObject } from "../../../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
+import { config } from "../../../../utils/urls";
 
 import {
   TableBodySC,
@@ -76,7 +77,7 @@ const TableBody = ({
               key={`item-${i}`}
               onMouseOver={(e) => handleMouseOver(device, e)}
               onMouseOut={handleMouseOut}
-              onClick={() => navigate(`/sensordaten/sensor/${device}`)}
+              onClick={() => navigate(`${config.url}sensor/${device}`)}
             >
               {Object.keys(newTableRowObject).map((entity, i) => {
                 return (
