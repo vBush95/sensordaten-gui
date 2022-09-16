@@ -10,4 +10,7 @@ export default defineConfig({
       reporter: ["text", "html"],
     },
   },
+  build: {
+    chunkSizeWarningLimit: 600,
+  },
 });
