@@ -33,7 +33,7 @@ const DemoAuthProvider = ({ children }: ChildrenProps) => {
 
     if (auth) {
       setToken(true);
-      navigate("sensordaten/overview", { replace: true });
+      navigate("/overview", { replace: true });
     } else {
       setToken(false);
     }
@@ -42,7 +42,7 @@ const DemoAuthProvider = ({ children }: ChildrenProps) => {
   const handleLogin = async () => {
     setToken(true);
     storeTokenInSessionStorage(true);
-    navigate("sensordaten/overview", { replace: true });
+    navigate("/overview", { replace: true });
   };
 
   // const token = "test";

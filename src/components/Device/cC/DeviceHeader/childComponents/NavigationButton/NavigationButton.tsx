@@ -10,6 +10,7 @@ import {
   TextSC,
 } from "./StyledComponents";
 import { DeviceObject } from "../../../../../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
+import { config } from "../../../../../../utils/urls";
 
 const noDevice = (
   <DisabledSC>
@@ -30,7 +31,7 @@ const NavigationButton = ({ rotation, index, devices }: NBProps) => {
   const previousDevice = (
     <ContainerSC
       onClick={() =>
-        navigate(`/sensordaten/sensor/${devices[index - 1].device}`)
+        navigate(`${config.url}sensor/${devices[index - 1].device}`)
       }
     >
       <SquareArrowIcon rotation={rotation} />
@@ -41,7 +42,7 @@ const NavigationButton = ({ rotation, index, devices }: NBProps) => {
   const nextDevice = (
     <ContainerSC
       onClick={() =>
-        navigate(`/sensordaten/sensor/${devices[index + 1].device}`)
+        navigate(`${config.url}sensor/${devices[index + 1].device}`)
       }
     >
       <TextSC>{firstLetterToUpperCase(devices[index + 1]?.device)}</TextSC>

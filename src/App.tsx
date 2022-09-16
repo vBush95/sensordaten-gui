@@ -18,6 +18,7 @@ import Device from "./components/Device/Device";
 import Layout from "./components/Layout/Layout";
 import useAuth from "./hooks/useAuth";
 import useDemoAuth from "./hooks/useDemoAuth";
+import { config } from "./utils/urls";
 
 const App: React.FC = () => {
   const [devices, setDevices] = useState<DeviceObject[]>([]);
@@ -26,10 +27,12 @@ const App: React.FC = () => {
   const context = useDemoAuth();
 
   useEffect(() => {
-    if (context?.token) {
+    if (context?.token === true) {
       let devicesArray = createDummyDevicesArray(30);
 
       setDevices(devicesArray);
+    } else {
+      setDevices([]);
     }
   }, [createDummyDevicesArray, generateEntities, context?.token]);
 
@@ -54,7 +57,7 @@ const App: React.FC = () => {
 
   return (
     <Routes>
-      <Route path="/" element={<Layout devices={devices} />}>
+      <Route path={config.url} element={<Layout devices={devices} />}>
         <Route
           path="overview"
           element={<OverviewTabelle devices={devices} />}
