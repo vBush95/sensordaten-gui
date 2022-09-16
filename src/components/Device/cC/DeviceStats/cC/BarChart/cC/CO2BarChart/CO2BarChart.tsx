@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import BarChartContainerSC from "./StyledComponents";
 import { ResponsiveBar } from "@nivo/bar";
-import createDataArray from "./functions/createDataArray";
+import createDataArray from "./fn/createDataArray";
 
 import { EntityITC } from "../PMBarChart/PMBarChart";
 
