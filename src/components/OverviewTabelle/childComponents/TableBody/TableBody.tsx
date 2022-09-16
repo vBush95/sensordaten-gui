@@ -11,7 +11,6 @@ import {
   FieldContentSC,
 } from "./StyledComponents";
 import { HoverPosition } from "../../OverviewTabelle";
-import { Entity } from "../../../../utilFunctions/generateEntities/generateEntities";
 
 export type TBProps = {
   devices: DeviceObject[];
