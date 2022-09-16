@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import DeviceHeader from "./childComponents/DeviceHeader/DeviceHeader";
-import DeviceStats from "./childComponents/DeviceStats/DeviceStats";
+import DeviceHeader from "./cC/DeviceHeader/DeviceHeader";
+import DeviceStats from "./cC/DeviceStats/DeviceStats";
 import DeviceContainerSC from "./StyledComponents";
-import DeviceChartsMenu from "./childComponents/DeviceChartsMenu/DeviceChartsMenu";
-import Chart from "./childComponents/Chart/Chart";
-import DemoChart from "./childComponents/Chart/DemoChart";
+import DeviceChartsMenu from "./cC/DeviceChartsMenu/DeviceChartsMenu";
+import Chart from "./cC/Chart/Chart";
+import DemoChart from "./cC/Chart/DemoChart";
 
 import { DeviceObject } from "../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
 import hasKey from "../../utilFunctions/hasKey/hasKey";

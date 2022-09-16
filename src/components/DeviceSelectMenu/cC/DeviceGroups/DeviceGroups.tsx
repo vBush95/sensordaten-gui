@@ -1,5 +1,5 @@
 import React from "react";
-import DeviceGroupLi from "./childComponents/DeviceGroupLi/DeviceGroupLi";
+import DeviceGroupLi from "./cC/DeviceGroupLi/DeviceGroupLi";
 
 import { Groups } from "../../functions/sortDevicesByGroup";
 

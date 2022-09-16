@@ -7,7 +7,7 @@ import {
   NameSC,
   NumberSC,
 } from "./styledComponents/StyledComponents";
-import GroupListItems from "./childComponents/GroupListItems/GroupListItems";
+import GroupListItems from "./cC/GroupListItems/GroupListItems";
 
 export type GroupProps = {
   heading: string;

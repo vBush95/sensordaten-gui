@@ -1,8 +1,8 @@
 import React from "react";
 import { DeviceStatsSC, FlexContainerSC } from "./StyledComponents";
-import DeviceStat from "./childComponents/DeviceStat/DeviceStat";
-import THChart from "./childComponents/THChart/THChart";
-import BarChart from "./childComponents/BarChart/BarChart";
+import DeviceStat from "./cC/DeviceStat/DeviceStat";
+import THChart from "./cC/THChart/THChart";
+import BarChart from "./cC/BarChart/BarChart";
 
 import { DeviceObject } from "../../../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
 

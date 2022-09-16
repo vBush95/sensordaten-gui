@@ -1,5 +1,5 @@
 import React from "react";
-import GroupMemberDevice from "./childComponents/GroupMemberDevice/GroupMemberDevice";
+import GroupMemberDevice from "./cC/GroupMemberDevice/GroupMemberDevice";
 
 export type Members = {
   groupMembers: string[];

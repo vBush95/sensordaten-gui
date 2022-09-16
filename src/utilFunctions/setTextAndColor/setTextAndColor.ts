@@ -1,7 +1,7 @@
 import { TextAndColor } from "./../checkForBehaglichkeit/checkForBehaglichkeit";
 import { Thresholds } from "./../../utils/thresholdsForMeasurements";
 import { EntityInformation } from "../groupEntities/groupEntities";
-import { ValueSC } from "../../components/Device/childComponents/DeviceStats/childComponents/THChart/StyledComponents";
+import { ValueSC } from "../../components/Device/cC/DeviceStats/cC/THChart/StyledComponents";
 
 export type EntityString = "pm10" | "pm25" | "co2";
 

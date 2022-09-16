@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import { InfluxDB } from "@influxdata/influxdb-client-browser";
 
-import TimeframeSelect from "./childComponents/TimeframeSelect/TimeframeSelect";
-import AggregatorTimeSelect from "./childComponents/AggregatorTimeSelect/AggregatorTimeSelect";
+import TimeframeSelect from "./cC/TimeframeSelect/TimeframeSelect";
+import AggregatorTimeSelect from "./cC/AggregatorTimeSelect/AggregatorTimeSelect";
 
 import firstLetterToUpperCase from "../../../../utilFunctions/firstLetterToUppercase/firstLetterToUppercase";
 
@@ -15,7 +15,7 @@ import {
   FlexStartSC,
   CheckboxContainerSC,
 } from "./StyledComponents";
-import InfluxChart from "./childComponents/InfluxChart/InfluxChart";
+import InfluxChart from "./cC/InfluxChart/InfluxChart";
 
 import {
   org,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-import TimeframeSelectDemo from "./childComponents/TimeframeSelect/TimeframeSelectDemo";
-import AggregatorTimeSelectDemo from "./childComponents/AggregatorTimeSelect/AggregatorTimeSelectDemo";
+import TimeframeSelectDemo from "./cC/TimeframeSelect/TimeframeSelectDemo";
+import AggregatorTimeSelectDemo from "./cC/AggregatorTimeSelect/AggregatorTimeSelectDemo";
 
 import firstLetterToUpperCase from "../../../../utilFunctions/firstLetterToUppercase/firstLetterToUppercase";
 
@@ -13,7 +13,7 @@ import {
   FlexStartSC,
   CheckboxContainerSC,
 } from "./StyledComponents";
-import InfluxChart from "./childComponents/InfluxChart/InfluxChart";
+import InfluxChart from "./cC/InfluxChart/InfluxChart";
 
 import { demoTimeSeriesSettings } from "../../../../utils/settings";
 import demoDataToPoints from "./functions/demoDataToPoints";

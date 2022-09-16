@@ -1,6 +1,6 @@
 import React from "react";
-import PMBarChart from "./childComponents/PMBarChart/PMBarChart";
-import CO2BarChart from "./childComponents/CO2BarChart/CO2BarChart";
+import PMBarChart from "./cC/PMBarChart/PMBarChart";
+import CO2BarChart from "./cC/CO2BarChart/CO2BarChart";
 import { DeviceObject } from "../../../../../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
 
 export type BCProps = {

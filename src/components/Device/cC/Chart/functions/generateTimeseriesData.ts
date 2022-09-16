@@ -1,4 +1,4 @@
-import { DataParams } from "./../DemoChart";
+import { DataParams } from "../DemoChart";
 export type Point = {
   x: string;
   y: number;

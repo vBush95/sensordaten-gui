@@ -1,5 +1,5 @@
 import classifyPoint from "robust-point-in-polygon";
-import { ValueSC } from "../../components/Device/childComponents/DeviceStats/childComponents/THChart/StyledComponents";
+import { ValueSC } from "../../components/Device/cC/DeviceStats/cC/THChart/StyledComponents";
 import { Entities, Entity } from "../generateEntities/generateEntities";
 
 export type EntityInformation = {

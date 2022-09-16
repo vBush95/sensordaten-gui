@@ -9,4 +9,9 @@ npm run build
 # navigate into the build output directory
 cd dist
 
+git init
+git checkout -b demo-site
+git add -A
+git commit -m 'deploy'
+
 git push -u origin demo-site

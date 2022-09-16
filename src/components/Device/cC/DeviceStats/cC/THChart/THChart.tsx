@@ -10,10 +10,10 @@ import {
   ChartDimensionsSC,
 } from "./StyledComponents";
 import calculateChartBoundaries from "./functions/calculateChartBoundaries";
-import SymbolCircle from "./childComponents/SymbolCircle";
-import TemperatureHumidityCircleLegend from "./childComponents/TemperatureHumidityCircleLegend";
-import Points from "./childComponents/Points";
-import CustomTooltip from "./childComponents/CustomTooltip/CustomTooltip";
+import SymbolCircle from "./cC/SymbolCircle";
+import TemperatureHumidityCircleLegend from "./cC/TemperatureHumidityCircleLegend";
+import Points from "./cC/Points";
+import CustomTooltip from "./cC/CustomTooltip/CustomTooltip";
 import createPolygonObject from "./functions/createPolygonObject";
 
 import thresholdsForMeasurements from "../../../../../../utils/thresholdsForMeasurements";

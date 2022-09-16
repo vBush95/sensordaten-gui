@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
 
 import { MenuSC, OrderedListSC } from "./styledComponents/StyledComponents";
-import GroupIcon from "./childComponents/GroupIcon/GroupIcon";
-import TableIcon from "./childComponents/TableIcon/TableIcon";
-import MenuItem from "./childComponents/MenuItem/MenuItem";
-import DeviceGroups from "./childComponents/DeviceGroups/DeviceGroups";
+import GroupIcon from "./cC/GroupIcon/GroupIcon";
+import TableIcon from "./cC/TableIcon/TableIcon";
+import MenuItem from "./cC/MenuItem/MenuItem";
+import DeviceGroups from "./cC/DeviceGroups/DeviceGroups";
 
 import sortDevicesByGroup from "./functions/sortDevicesByGroup";
 import { DeviceObject } from "../../utilFunctions/entitiesObjectToArray/entitiesObjectToArray";
